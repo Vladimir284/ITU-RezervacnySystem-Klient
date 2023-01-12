@@ -1,0 +1,8 @@
+Create container:
+podman run --name db --env MARIADB_ROOT_PASSWORD=admin --env MARIADB_USER=admin --env MARIADB_PASSWORD=admin --env MARIADB_DATABASE=db -p 3306:3306 mariadb:latest
+
+Delete contianer:
+podman rm db
+
+sql demo
+https://github.com/DIFS-Teaching/basic-demos

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="popis">
+    <meta name="keywords" content="keywords :)">
+    <meta name="author" content="Vladimir Meciar, xmecia00">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="height=device-height, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Internal -->
+    <link rel="stylesheet" href="../css/client.css">
+    <script src="../jquery/jquery-3.6.1.min.js"></script>
+    <script src="../js/client.js" type="text/javascript"></script>
+
+    <!-- CDN  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+
+    <title>Rezervace klienta</title>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar_home">
+        <img id="undo_home" class="home_img" src="../imgs/home.svg" alt="home">
+    </div>
+
+    <button onclick="prihlaseniZamestnance()" class="login_button">Příhlášení pro zaměstnance</button>
+
+</div>
+
+<div class="reservation_info_holder">
+    <table class="reservation_info_table">
+        <tr>
+            <th>Zvolená služba</th>
+            <td id="reservation_service"></td>
+        </tr>
+        <tr>
+            <th>Zvolený pracovník</th>
+            <td id="reservation_employee"></td>
+        </tr>
+        <tr>
+            <th>Zvolený datum</th>
+            <td id="reservation_date"></td>
+        </tr>
+    </table>
+</div>
+
+
+<section class="hero">
+
+    <div class="select_box">
+
+        <div class="service_name" id="service_name">
+            <span class="service_name_text" id="service_name_text">Vyberte si službu</span>
+        </div>
+
+        <div class="service_list" id="main_body">
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

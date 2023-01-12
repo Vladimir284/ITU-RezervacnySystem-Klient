@@ -1,0 +1,199 @@
+/* Ondřej Fojt, xfojto00 */
+body {
+    margin: 0px;
+    height: 60vh;
+}
+
+/* header */
+header {
+    position: relative;
+    width: 100vw;
+    height: 91px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* home */
+.home {
+    position: absolute;
+    /*left: 0%;
+    right: 90vw;*/
+    width: 125px;
+    top: 0%;
+    bottom: 0%;
+
+
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.home:active {
+    box-shadow: none;
+}
+
+.home>img {
+    position: relative;
+    top: 0%;
+    bottom: 0%;
+    left: 20%;
+}
+
+/* content */
+content {
+    margin: auto;
+}
+
+.date-scroller {
+    display: flex;
+    width: fit-content;
+    position: relative;
+    margin: auto;
+    margin-top: 5vh;
+    height: 50px;
+}
+
+.clickable {
+    margin: auto;
+    padding: 5px 10px 0px 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.20);
+    border-radius: 3px;
+}
+
+.clickable:active {
+    box-shadow: none;
+}
+
+.clickable>img {
+    width: 30px;
+}
+
+.date {
+    width: inherit;
+    display: inline;
+    text-align: center;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.content-h-split {
+    display: flex;
+    margin-top: 5vh;
+    height: 100%;
+}
+
+.split-h-left {
+    margin: auto;
+    width: 65%;
+    height: 100%;
+}
+
+.split-h-right {
+    margin-right: 5vw;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.bar-plot {
+    /*width: 100%;*/
+    border-right: #000000 solid 1px;
+    border-collapse: collapse;
+    border-top: rgba(0, 0, 0, 0.10) dashed 2px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.bar-row {
+    /*display: flex;*/
+    /*width: 100%;*/
+    margin: 20px 0px 0px 0px;
+    border-collapse: collapse;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: rgba(0, 0, 0, 0.10) dashed 2px;
+}
+
+.bar-legend {
+    margin-right: 45px;
+}
+
+.bar-bar {
+    display: table-cell;
+    width: 100%;
+    padding-left: 20px;
+}
+
+
+
+#search {
+    border: none;
+    border-bottom: #000000 solid 1px;
+}
+
+#search:active {
+    border: none;
+}
+
+.search {
+    display: flex;
+    padding: 10px;
+}
+
+#search-results {
+    position: relative;
+    margin: 0% 20% 10% 2.5%;
+    padding-right: 7px;
+    display: flex;
+    flex-direction: column;
+}
+
+#search-results>span {
+    border-bottom: rgba(0, 0, 0, 0.10) dashed 1px;
+}
+
+.panel-btn {  
+    margin: 25% 20% 10% 20%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+
+
+/* barvy */
+.clr-primary {
+    background-color: #D9D9D9;
+}
+
+.clr-bg {
+    background-color: #FFFFFF;
+}
+
+header>.home:active {
+    background: #444444;
+}
+
+.clickable:active {
+    background: #727272;
+}
+
+.clickable:hover {
+    background: #e1e1e1;
+}
+
+/* text */
+
+.text-primary {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    color: #000000;
+}

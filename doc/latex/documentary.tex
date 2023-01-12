@@ -1,0 +1,92 @@
+% Preamble
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{lmodern}
+\usepackage[none]{hyphenat}
+\usepackage[left=2cm, text={17cm, 24cm}, top=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{newpxtext}
+\usepackage{longtable,ltcaption}
+\usepackage{textgreek}
+\usepackage{multirow}
+
+% \comment{}
+\newcommand{\comment}[1]{}
+
+
+% Document
+\begin{document}
+
+    % Front page
+    \pagestyle{empty}
+    \begin{titlepage}
+        \begin{center}
+            \normalsize{Vysoké učení technické v Brně\linebreak}
+            \normalsize{Fakulta informačních technologií}
+
+            \vfill
+
+            \large\textbf{Tvorba uživatelských rozhraní\linebreak}
+            \large\textbf{2022/2023}
+
+            \vfill
+
+            \LARGE\textbf{Technická zpráva\linebreak}
+
+            \vfill
+            \vfill
+            \vfill
+
+
+            \begin{flushleft}
+                \large
+                Vít Hrbáček (xhrbac10)\\
+                Vladimír Mečiar (xmecia00)\\
+                \textbf{Ondřej Fojt (xfojto00)}\\
+                \hfill
+                Brno, \today
+            \end{flushleft}
+        \end{center}
+    \end{titlepage}
+    \pagestyle{plain}
+    \newpage
+
+    % Content - sections
+    \tableofcontents
+    \newpage
+
+    % Conent - pictures and tables
+    % \listoffigures
+    % \listoftables
+    % \newpage
+
+    % Content
+    % Everyone for themselves in this report :)
+    \include{doc/latex/modules/individual_report_vlada}
+    \include{doc/latex/modules/individual_report_ondra}
+    \include{doc/latex/modules/individual_report_vit}
+    \include{doc/latex/modules/team_report}
+    \include{doc/latex/modules/implementation_report}
+    \include{doc/latex/modules/testing_report}
+    
+    \section{Použitá literatura}
+    Při implementaci byla použita literatura z webů Blog Hubspot, \hyperlink{https://www.w3schools.com/js/js_arrays.asp}{W3.com}, \hyperlink{https://www.jakpsatweb.cz/javascript/objekt-date.html}{JakPsatWeb.cz}, \hyperlink{https://stackoverflow.com/questions/7755088/what-does-href-expression-a-href-javascript-a-do}{StackOverflow}, \hyperlink{https://www.interval.cz/clanky/promenne-v-javascriptu/}{Interval.cz}, \hyperlink{https://www.youtube.com/playlist?list=PLillGF-RfqbYJVXBgZ_nA7FTAAEpp_IAc}{YouTube} a další.
+
+\end{document}

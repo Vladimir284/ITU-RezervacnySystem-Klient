@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services>
+ <service>
+   <name>Massage</name>
+   <type>Full body</type>
+   <type>Thighs</type>
+   <type>Back</type>
+   <type>Face</type>
+ </service>
+ <service>
+  <name>Bath</name>
+ </service>
+ <service>
+  <name>Sauna</name>
+ </service>
+ <service>
+  <name>Acupuncture</name>
+ </service>
+</services>
+
+<employees>
+ <employee>John</employee>
+ <employee>Peter</employee>
+ <employee>Joe</employee>
+ <employee>Linda</employee>
+</employees>
