@@ -4,8 +4,8 @@
 // @modified 14.12.2022
 
 // Url for backend
-const url = "http://iturezervacnisystem.wz.cz/backend.php";
-
+const urlOld = "http://iturezervacnisystem.wz.cz/backend.php"; // Vitos backend
+const urlNew = "../backend/client/";
 // Global variables, values to be sent to BE in submit to BE
 let service;
 let employee;
@@ -18,7 +18,7 @@ function loadServices() {
 
 
     $.ajax({
-        url: url,
+        url: urlOld,
         type: "get",
         data: {
             druhRozhrani: "zakaznik",

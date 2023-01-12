@@ -1,6 +1,6 @@
 <?php
     // Načtení externiho souboru pro nacteni databaze
-    include_once 'dbh.inc.php'; // Napojeni na databazi
+//    include_once 'dbh.inc.php'; // Napojeni na databazi
     
     function pridatRezervaci() {
         $den = $_GET["den"]; 

@@ -2,6 +2,9 @@
 -- DROP TABLE rezervace;
 -- DROP TABLE zamestnanec;
 -- DROP TABLE sluzba;
+create database db;
+
+use db;
 
 create table pacient (
 	id int(12) not null PRIMARY KEY AUTO_INCREMENT,
