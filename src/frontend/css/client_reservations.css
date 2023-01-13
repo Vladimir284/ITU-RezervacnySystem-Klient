@@ -1,0 +1,71 @@
+/*@author Vladimir Meciar (xmecia00)*/
+/*@file client_reservations.css*/
+/*@brief Stylesheet for clients reservations.html*/
+/*@modified 12.1.2023*/
+
+
+:root {
+    --site-background-color: #F5F5F5;
+    --navbar-color: #BEC6C3;
+    --service-name-bar-color: #626670;
+    --service-name-text-color: #ffffff;
+    --option-bar-subservice-color: #B00000;
+}
+
+body {
+    height: 100%;
+    background: var(--site-background-color);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    height: 90px;
+    background: var(--navbar-color);
+}
+
+.navbar_home {
+    width: 150px;
+    height: 90px;
+    background: white;
+    display: block;
+}
+
+.home_img {
+    padding-left: 30px;
+    transition: all 200ms ease-in-out;
+}
+
+.home_img:hover,
+.home_img:focus {
+    filter: sepia(10);
+}
+
+.login_button {
+    position: absolute;
+    left: 85%;
+    top: 5px;
+    border-radius: 10px;
+    border-color: grey;
+    background: white;
+    width: 143px;
+    height: 80px;
+}
+
+.login_button:hover,
+.login_button:focus {
+    filter: sepia(10);
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select_box {
+    border: transparent;
+    margin-top: 100px;
+    box-shadow: #626669 4px 0px 4px;
+}

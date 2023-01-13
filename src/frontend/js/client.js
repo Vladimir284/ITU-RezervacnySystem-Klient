@@ -65,13 +65,18 @@ function loadServices() {
 
 }
 
+function parseData(data) {
+    const ad = "<!--WZ-REKLAMA-1.0IK-->";
+    return data.substring(data.indexOf(ad) + ad.length);
+}
+
 // Load choose employee site
 function chooseEmployee() {
     $("#main_body").html("");
     $("#service_name_text").html('Vyberte si zamestnanca');
 
     $.ajax({
-        url: url,
+        url: urlOld,
         type: "get",
         data: {
             druhRozhrani: "zakaznik",
@@ -134,7 +139,7 @@ function updateDates(monday) {
     });
 
     $.ajax({
-        url: url,
+        url: urlOld,
         type: "get",
         data: {
             druhRozhrani: "zakaznik",
@@ -170,6 +175,27 @@ function updateDates(monday) {
 
         }
     });
+}
+
+/**
+ * Checks if date lies in week
+ * @param date1
+ * @param firstDayOfWeek
+ * @returns true if date lies in week{boolean}
+ */
+function dateLiesInWeek(date1, firstDayOfWeek) {
+
+    if (date1.getFullYear() >= firstDayOfWeek.getFullYear())
+        if (date1.getMonth() >= firstDayOfWeek.getMonth())
+            if (date1.getDate() >= firstDayOfWeek.getDate())
+                if (date1.getFullYear() <= firstDayOfWeek.getFullYear())
+                    if (date1.getMonth() <= firstDayOfWeek.getMonth())
+                        if (date1.getDate() <= (firstDayOfWeek.getDate()+5))
+                            return true;
+
+
+    return false;
+
 }
 
 // Format print into index.html
@@ -229,20 +255,30 @@ function userInfo() {
             return;
         }
         $.ajax({
-            url: url,
+            url: urlNew /*+ "backend.php"*/,
             type: "get",
             data: {
-                druhRozhrani: "zakaznik",
-                pridatrezervaci: "hey",
-                sluzba: service,
-                zamestnance: employee,
-                datum: date,
-                cas: time,
-                delka: "60",
-                pacient: patient,
-                telefon: phone,
+                // id: /*Some Id*/,
+                name: patient,
                 email: email,
-                poznamka: comment
+                phone: phone,
+                date: date,
+                time: time,
+                service: service,
+                employee: employee,
+
+                // Old
+                // druhRozhrani: "zakaznik",
+                // pridatrezervaci: "hey",
+                // sluzba: service,
+                // zamestnance: employee,
+                // datum: date,
+                // cas: time,
+                // delka: "60",
+                // pacient: patient,
+                // telefon: phone,
+                // email: email,
+                // poznamka: comment
             },
 
 
@@ -265,46 +301,12 @@ function userInfo() {
     });
 }
 
-
-/**
- * Function for parsing responses from web server
- * @param data
- * @returns {string}
- */
-// No needed when running on web server
-function parseData(data) {
-    const ad = "<!--WZ-REKLAMA-1.0IK-->";
-    return data.substring(data.indexOf(ad) + ad.length);
-}
-
-/**
- * Checks if date lies in week
- * @param date1
- * @param firstDayOfWeek
- * @returns true if date lies in week{boolean}
- */
-function dateLiesInWeek(date1, firstDayOfWeek) {
-
-    if (date1.getFullYear() >= firstDayOfWeek.getFullYear())
-        if (date1.getMonth() >= firstDayOfWeek.getMonth())
-            if (date1.getDate() >= firstDayOfWeek.getDate())
-                if (date1.getFullYear() <= firstDayOfWeek.getFullYear())
-                    if (date1.getMonth() <= firstDayOfWeek.getMonth())
-                        if (date1.getDate() <= (firstDayOfWeek.getDate()+5))
-                            return true;
-
-
-    return false;
-
-}
-
-/**
- * Load main page and its attributes
- */
+// Load main page and its attributes
 function loadMainPage() {
     loadServices();
 }
 
+// Added because of redundance of code
 function clearTable(){
     service = "";
     reservation_date = "";

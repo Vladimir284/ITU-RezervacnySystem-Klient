@@ -1,7 +1,10 @@
 # Create database
-createDatabase:
-	# TODO Where is database running, how to change location of database, how to connect into database, how to insert data into database
-	podman run src/backend/client --name db --env MARIADB_ROOT_PASSWORD=admin --env MARIADB_USER=admin --env MARIADB_PASSWORD=admin --env MARIADB_DATABASE=db -p 3306:3306 mariadb:latest
+dataBase:
+	./script.sh
+
+## Always have apache running in folder src
+#apache:
+	#	php -S 127.0.0.1:8000
 
 # Kill and delete database
 cleanDatabase:

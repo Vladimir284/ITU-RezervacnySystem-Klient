@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @brief Backend endpoint for working with client and his data
+ */
 class PeopleService
 {
     private $pdo; // connection on database
@@ -46,19 +49,19 @@ class PeopleService
      */
     function getPeople()
     {
-        $stmt = $this->pdo->query('SELECT jmeno FROM pacient LIMIT 100');
-        return $stmt->fetch(PDO::FETCH_ASSOC)['jmeno'];
+        $stmt = $this->pdo->query('SELECT name FROM pacient');
+        return $stmt->fetch(PDO::FETCH_ASSOC)['name'];
 //        return $this->pdo->prepare("SHOW COLUMNS FROM pacient;")->execute()->fetch();
     }
 
     /**
      * Get one person
-     * @param $id of person
+     * @param $id int id of person
      * @return mixed
      */
     function getPerson($id)
     {
-        $stmt = $this->pdo->prepare('SELECT id, name, surname FROM users WHERE id = ?');
+        $stmt = $this->pdo->prepare('SELECT id, name, email, phone, date, time, service, employee  FROM pacient WHERE id = ?');
         $stmt->execute([$id]);
         return $stmt->fetch();
     }
@@ -88,12 +91,13 @@ class PeopleService
      * Change atributes of person
      * @return bool
      */
-    function updatePerson()
+    function updatePerson($id,$name,$email,$phone)
     {
-        $stmt = $this->pdo->prepare('UPDATE pacient SET email = :email WHERE id = :id');
+        $stmt = $this->pdo->prepare('UPDATE pacient SET NAME = :name SET email = :email SET phone = :phone WHERE id = :id');
         $data = array(
-            "email" => "new@email.com",
-            "name" => "Petr Pacientový"
+            "name" => $name,
+            "email" => $email,
+            "phone" => $phone
         );
         if ($stmt->execute($data))
         {
