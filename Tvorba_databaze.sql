@@ -2,22 +2,11 @@ CREATE TABLE pacient (
 	id int(12) not null PRIMARY KEY AUTO_INCREMENT,
     name varchar(24),
 	email varchar(24),
-	phone int(11),
+	phone varchar(12),
 	date varchar(10),
 	time varchar(5),
 	service varchar(24),
 	employee varchar(24)
-);
-
-create table sluzba (
-	id int(12) not null PRIMARY KEY AUTO_INCREMENT,
-    	jmeno varchar(24),
-	kategorie varchar(24)
-);
-
-create table zamestnanec (
-	id int(12) not null PRIMARY KEY AUTO_INCREMENT,
-    	jmeno varchar(24)
 );
 
 INSERT INTO pacient(`name`, `email`, `phone`,`date`,`time`,`service`,`employee`) VALUES ("Andrej Szelte","andrej@pacientr.hu", 2123234345,"2023-01-10","8:00","Thajská Masáž","Jan Novák");

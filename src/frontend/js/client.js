@@ -254,11 +254,20 @@ function userInfo() {
             alert("Nevyplnené informácie");
             return;
         }
+
+        // For new backend
+        // person = new Object();
+        // person.name = patient;
+        // person.email = email;
+        // person.phone = phone;
+        // person.date = date;
+        // person.time = time;
+        // person.service = service;
+        // person.employee = employee;
         $.ajax({
-            url: urlNew /*+ "backend.php"*/,
-            type: "get",
+            url: urlNew + "backend.php",
+            type: "POST",
             data: {
-                // id: /*Some Id*/,
                 name: patient,
                 email: email,
                 phone: phone,
@@ -266,20 +275,9 @@ function userInfo() {
                 time: time,
                 service: service,
                 employee: employee,
-
-                // Old
-                // druhRozhrani: "zakaznik",
-                // pridatrezervaci: "hey",
-                // sluzba: service,
-                // zamestnance: employee,
-                // datum: date,
-                // cas: time,
-                // delka: "60",
-                // pacient: patient,
-                // telefon: phone,
-                // email: email,
-                // poznamka: comment
             },
+            dataType: 'json',
+            async: false,
 
 
             // Go back to home page after summit
@@ -287,7 +285,8 @@ function userInfo() {
                 alert("Objednávka bola prijatá.\n Bližšie informácie obdržíte v e-mailovej schránke.")
                 console.log("done");
                 clearTable();
-                loadMainPage();
+                // loadMainPage();
+                // Go to new page
             },
 
             // Go back to home page after submit
